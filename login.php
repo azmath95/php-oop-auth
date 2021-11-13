@@ -80,10 +80,10 @@ if($validation->passed() ){
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="index.php">Login</a>
+                <a class="nav-link" href="login.php">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="regsister.php">Register</a>
+                <a class="nav-link" href="register.php">Register</a>
             </li>
         </ul>
 

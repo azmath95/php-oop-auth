@@ -26,7 +26,7 @@ class DataSource
 
     const PASSWORD = '';
 
-    const DATABASENAME = 'forgot-password-reset';
+    const DATABASENAME = 'authphp';
 
     private $conn;
 

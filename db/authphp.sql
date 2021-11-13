@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
--- http://www.phpmyadmin.net
+-- version 5.1.0
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Apr 12, 2017 at 01:26 
--- Server version: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Host: localhost:3306
+-- Generation Time: Nov 13, 2021 at 09:49 AM
+-- Server version: 5.7.24
+-- PHP Version: 7.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -38,12 +39,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`) VALUES
-(1, 'zahidin', '$2y$10$iWl6iPxgnbY0u0rKOEx0Qe3FWbHWOvzAmmPbOFXnW8eogES7iNI6S', 1),
-(2, 'udin', '$2y$10$gByO8uZ8wAPid6kDE2M8A.hUN/bIRRiXU6Z1ogdCqOI5oWIzft3ZG', 0),
-(25, 'jarwo', '$2y$10$K2QehfMRZWb4Q1rqMmmlC.GkIYMemLiqn7dMSl.mB6rmKsKFLp8mm', 0),
-(26, 'zibran', '$2y$10$Y9qnJ7qAORqmOUTD0pKGh.wju0pu.5FEvtUr7mQrJ6FL8H8jr22SC', 0),
-(29, 'arig', '$2y$10$4J/Gy.JntSvXmUZLAAw3yeZfA9gLCecBFvHlxVT/1DC0NbXra8C1.', 0),
-(33, 'husni', '$2y$10$bOX6F.bHffW2g6LAIai/QOJZ5DIvM135./Hv37CPbFubeuktQxDxi', 0);
+(1, 'azmath', 'e10adc3949ba59abbe56e057f20f883e', 1),
+(36, 'jibon', '$2y$10$/VgmPqtiQmFXMrzxWvKV0OlyPZ6rvwFE2zPaRMWjaDTFI.GfaI3zW', 0);
 
 --
 -- Indexes for dumped tables
@@ -63,7 +60,9 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -149,7 +150,7 @@
                   <span class="hidden-xs">Action</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Logout</a>
+                  <a class="dropdown-item" href="./../logout.php">Logout</a>
                 </div>
               </li>
             </ul>

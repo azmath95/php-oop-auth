@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <?php
 
 require_once "core/init.php";
@@ -8,7 +18,7 @@ $data = new Database(); */
 
 // pengujian session logout
 if($user->is_login()){
-  Redirect::to('profile');
+  Redirect::to('backend/index');
 }
 
 if(Session::exists('login')){
@@ -43,7 +53,7 @@ if($validation->passed() ){
   if($user->login_user( Input::get('username'), Input::get('password') ) )
   {
     Session::set('username', Input::get('username'));
-    Redirect::to('profile');
+    Redirect::to('backend/index');
   }else{
     $errors[] = "Username or Password is not valid";
   }
@@ -58,17 +68,54 @@ if($validation->passed() ){
   }// end token
 } // end submit
 
-
-require_once 'templates/header.php';
 ?>
-<h2 class="judul">Login</h2>
-<form action="login.php" method="post">
-  <input type="text" class="bil" name="username" placeholder="Username"><br>
-  <input type="password" class="bil" name="password" placeholder="Password"><br>
-  <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
-  <input type="submit" class="tombol" name="submit" value="Login">
-  <!-- menampilkan error -->
-  <?php if(!empty($errors)){ ?>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
+    <div class="container">
+    <a class="navbar-brand" href="#">Health Watch</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.php">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="regsister.php">Register</a>
+            </li>
+        </ul>
+
+    </div>
+    </div>
+</nav>
+  <div class="container">
+     <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <div class="logo">
+      <img src="images/logo.png" class="rounded mx-auto d-block" alt="..."></div>
+      </div>
+    <div class="col-4"></div>
+  </div>
+<div class="row justify-content-center">
+ 
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">Login</div>
+                            <div class="card-body">
+                                <form class="form-horizontal" method="post" action="login.php">
+                                    <div class="mb-3">
+                      <input type="text" class="form-control" name="username" id="exampleFormControlInput1" placeholder="Your Email">
+                  </div>
+                                    <div class="mb-3">
+                      <input type="password" name="password" class="form-control" id="exampleFormControlInput1" placeholder="Your Password">
+                  </div>
+                   <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
+                   <div class="col-auto">
+                        <button type="submit" class="btn btn-primary mb-3" name="submit" value="Login">Login</button>
+                     <?php if(!empty($errors)){ ?>
     <div class="error">
       <?php foreach ($errors as $error) { ?>
         <!-- sweetalert -->
@@ -81,8 +128,18 @@ require_once 'templates/header.php';
     <?php  } ?>
     </div>
   <?php } ?>
-</form>
+                                </form>
+                            </div>
 
-<?php
-require_once 'templates/footer.php';
-?>
+                        </div>
+                    </div>
+                </div>
+</div>
+
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

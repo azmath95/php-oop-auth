@@ -75,8 +75,9 @@ class Database{
           while ($row = $result->fetch_assoc()) {
             $results[] = $row;
             }
-      }
+            
         return $results;
+      }
     }
   }
 
